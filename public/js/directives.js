@@ -13,7 +13,7 @@ angular.module('myApp.directives', []).
     	var myChart = "";
 
 		attrs.$observe("row",function(row){
-			var width = 1/row*100 -2;
+			var width = 1/row*100;
 			elm.parent().css("width",width+"%");
 			myChart.resize();
 		});
@@ -29,32 +29,20 @@ angular.module('myApp.directives', []).
 		        tooltip : {
 		            trigger: 'axis'
 		        },
-		        legend: {
-		            data:['蒸发量','降水量']
-		        },
+		        legend: value.legend,
 		        toolbox: {
 		            show : true,
 		            feature : {
-		                mark : {show: true},
+		                
 		                dataView : {show: true, readOnly: false},
-		                magicType : {show: true, type: ['line', 'bar']},
-		                restore : {show: true},
+		                magicType : {show: true, type: ['line', 'bar',]},
+		                
 		                saveAsImage : {show: true}
 		            }
 		        },
 		        calculable : true,
-		        xAxis : [
-		            {
-		                type : 'category',
-		                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
-		            }
-		        ],
-		        yAxis : [
-		            {
-		                type : 'value',
-		                splitArea : {show : true}
-		            }
-		        ],
+		        xAxis : value.xAxis,
+		        yAxis : value.yAxis,
 		        series : value.series
 		    }
 		    myChart.setOption(option);

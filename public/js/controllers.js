@@ -25,7 +25,7 @@ angular.module('myApp.controllers', []).
     // write Ctrl here
 
   }).
-  controller("dashboardCtrl",function($scope,$http) {
+  controller("dashboardCtrl",function($scope,$http,$timeout) {
     $http({
       method: 'GET',
       url: '/api/name'
@@ -33,6 +33,7 @@ angular.module('myApp.controllers', []).
     success(function (data, status, headers, config) {
       $scope.dashboard = data.name;
       $scope.rows = data.rows;
+
     }).
     error(function (data, status, headers, config) {
       $scope.name = 'Error!';
