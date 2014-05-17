@@ -31,6 +31,10 @@ block body
             i.ico.ico-charts
             a(href='javascript://') Charts
             i.ico.ico-arrow-right
+          li 
+            i.ico.ico-charts
+            a(ui-sref="map") Map
+            i.ico.ico-arrow-right
     div.g-mn
       div.m-header
       div.g-main(ui-view)
@@ -44,3 +48,6 @@ block body
   script(src='js/filters.js')
   script(src='js/directives.js')
   script(src='js/lib/charts/echarts-plain-original-map.js')
+  script(src="http://api.map.baidu.com/api?v=2.0&ak=0D3dd7950cbddde51845e4d353050c0a")
+  script(src="http://api.map.baidu.com/library/DistanceTool/1.2/src/DistanceTool_min.js")
+  script(src="http://api.map.baidu.com/library/RectangleZoom/1.2/src/RectangleZoom_min.js")
