@@ -57,8 +57,7 @@ angular.module('myApp.directives', []).
     }
 	})	
     .directive("map",function(){
-    	return {
-    		
+    	return {    		
 		 	link: function(scope, elm, attrs) {
 		 		var geolocation = new BMap.Geolocation();
 		 			
