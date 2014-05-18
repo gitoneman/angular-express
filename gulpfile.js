@@ -4,6 +4,7 @@ var minifycss = require("gulp-minify-css");
 var rename = require("gulp-rename");
 var autoprefixer = require("gulp-autoprefixer");
 var livereload = require("gulp-livereload");
+var base64 = require("gulp-base64");
 
 gulp.task("css",function(){
 	return gulp
@@ -17,6 +18,7 @@ gulp.task("css",function(){
 gulp.task("default",function(){
 	gulp.run("css");
 	gulp.run("watch");
+
 });
 
 gulp.task("watch",function(){
