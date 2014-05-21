@@ -2,4 +2,4 @@
 div.m-dashboard
 	div(class="m-dashboard-row{{rows.length}}",ng-repeat="row in rows")
 		div(class="m-dashboard-plane",ng-repeat="chart in row",style="width:50%;")
-			div(x-chart="{{chart}}",style="height:100%;",row="{{row.length}}")
+			div(x-chart="{{chart}}",style="height:100%;background:#fff",row="{{row.length}}")

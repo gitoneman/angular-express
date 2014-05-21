@@ -112,7 +112,7 @@ body {
   box-sizing: border-box;
   float: left;
   height: 100%;
-  border: 1px solid #ccc;
+  padding: 10px;
 }
 .f-fl {
   float: left;

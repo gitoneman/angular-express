@@ -50,10 +50,9 @@ angular.module('myApp.directives', []).
 		    $(window).on("resize",function(){
 		    	myChart.resize();
 		    })
-
 		    
 		});
     	
-    };
+    }
   });
   
