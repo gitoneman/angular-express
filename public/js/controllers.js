@@ -25,6 +25,29 @@ angular.module('myApp.controllers', []).
     // write Ctrl here
 
   }).
+  controller('mapCtrl', function ($scope) {
+    var operater = {
+      toggleRule:function(){
+        $scope.query.rule = $scope.query.rule == true? false:true;
+      },
+      toggleRectangleZoom:function(){
+        $scope.query.RectangleZoom = $scope.query.RectangleZoom == true? false:true;
+      }
+    }
+    $scope.query = {
+      place:"",
+      rule:false,
+      RectangleZoom:false
+    }
+
+    $scope.toggleRule = function(){
+      operater.toggleRule();
+    }
+    $scope.toggleRectangleZoom = function(){
+      operater.toggleRectangleZoom();
+    }
+
+  }).
   controller("dashboardCtrl",function($scope,$http,$timeout) {
     $http({
       method: 'GET',

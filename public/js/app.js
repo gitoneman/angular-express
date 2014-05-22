@@ -51,5 +51,10 @@ config(function ($routeProvider, $locationProvider,$stateProvider, $urlRouterPro
       url: "/layouts",
       templateUrl: "partials/layouts.jade"
     })
-    
+    .state("map",{
+      url: "/map",
+      templateUrl: "partials/map.jade",
+      controller: "mapCtrl"
+    })
+   
 });

@@ -1,0 +1,9 @@
+div.m-search
+	select
+		option(value="hz") 杭州
+	input(type="text",placeholder="输入地址",ng-model="query.place")
+div.m-toolbar
+	span(ng-click="toggleRule()") 标尺
+	span(ng-click="toggleRectangleZoom()") 拉框缩放
+div(x-map="",class="m-map",id="allmap",opt="{{query}}",place="{{query.place}}")
+

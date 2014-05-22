@@ -1,6 +1,34 @@
 /*
  * Serve JSON to our AngularJS client
  */
+var mongoose = require("mongoose");
+var express_mongoose = require("express-mongoose");
+var model = require("./model");
+
+mongoose.connect('mongodb://localhost/express-mongoose');
+
+exports.list = function(req,res){
+	model.find({},function(err,doc){
+		res.json(doc);
+	});
+}
+exports.insert = function(req,res){	
+    model.insert({ 
+        name : "make" 
+    },function(){
+    	res.send("data create");
+    });
+}
+exports.update = function(req,res){	
+    model.update({name:"make"},{name:"mike"},function(){
+    	res.send("data updated");
+    });
+}
+exports.delete = function(req,res){	
+    model.delete({name:"mike"},function(){
+    	res.send("data delete");
+    });
+}
 
 exports.name = function (req, res) {
   res.json({
@@ -122,3 +150,6 @@ exports.name = function (req, res) {
     ]
   });
 };
+
+
+
