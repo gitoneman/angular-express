@@ -5,6 +5,7 @@ var rename = require("gulp-rename");
 var autoprefixer = require("gulp-autoprefixer");
 var livereload = require("gulp-livereload");
 var base64 = require("gulp-base64");
+var spritesmith = require('gulp.spritesmith');
 
 gulp.task("css",function(){
 	return gulp
@@ -17,9 +18,22 @@ gulp.task("css",function(){
 
 gulp.task("default",function(){
 	gulp.run("css");
+	gulp.run("sprite");
 	gulp.run("watch");
 
 });
+
+gulp.task('sprite', function () {
+  var spriteData = gulp.src('public/img/*.png').pipe(spritesmith({
+    imgName: 'sprite.png',
+    cssName: 'sprite.css',
+    algorithm:'',
+    cssTemplate:'public/build/css/sp.css'
+  }));
+  spriteData.img.pipe(gulp.dest('public/build/img/'));
+  spriteData.css.pipe(gulp.dest('public/build/css/'));
+});
+
 
 gulp.task("watch",function(){
 	gulp.watch("public/css/*.css",["css"]);
